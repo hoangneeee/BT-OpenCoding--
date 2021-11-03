@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef unsigned long long ull;
+
+int main(){
+    int t;
+ 
+    cin>>t;
+    //cout<<"t="<<t<<endl;
+    
+    while(t--){
+        int N, L;
+        //cout<<"N, L=";
+        cin>>N>>L;
+
+       unsigned long long S, Si=0;
+       S=(ull)N*(2*L+N-1)/2;
+	
+		for(int i=0; i<N-1; i++){
+			int ai;
+			cin>>ai;
+			Si+=ai;
+		}
+		
+		cout<<(S-Si)<<endl;
+    }
+}
