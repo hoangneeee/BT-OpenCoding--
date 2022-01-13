@@ -1,0 +1,54 @@
+#include <iostream>
+#include <math.h>
+#define ll long long;
+using namespace std;
+bool SoCP(long long n);
+bool ChuSCP(long long n);
+int main() {
+    int test,n,cnt;
+    cin>>test;
+    while (test--){
+        long long min,max;
+        cin>>n;
+        cnt=0;
+        if (n%2==0){
+            max= sqrt(pow(10,n));
+            min= sqrt(pow(10,n-1))+1;
+        } else{
+            max= sqrt(pow(10,n))+1;
+            min= sqrt(pow(10,n-1));
+        }
+        for (long long i = min; i < max; i++) {
+            if (ChuSCP(i*i)== true){
+                cnt=1;
+                cout<<i*i<<endl;
+                break;
+            }
+        }
+        if (cnt == 0){
+            cout<<-1<<endl;
+        }
+
+    }
+    return 0;
+}
+bool SoCP(long long n){
+     long long x;
+     x= sqrt(n);
+    if (x*x==n){
+        return true;
+    } else{
+        return false;
+    }
+}
+bool ChuSCP(long long n){
+    long long dv;
+    while (n){
+        dv = n%10;
+        n = n/10;
+        if (SoCP(dv)== false){
+            return false;
+        }
+    }
+    return true;
+}

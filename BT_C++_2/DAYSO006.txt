@@ -1,0 +1,63 @@
+//#include <bits/stdc++.h>
+//using namespace std;
+//void nhap(int a[], int n){
+//    for (int i = 0; i < n; i++) {
+//        cout<<a[i];
+//    }
+//}
+//int demsochuso(long n){
+//    int cnt =0;
+//    while(n>=10){
+//        n/=10;
+//        cnt++;
+//    }
+//    return cnt;
+//}
+//int chusodautien(long n) {
+//    int temp;
+//    do {
+//        temp = n % 10;
+//        n /= 10;
+//    } while (n > 0);
+//    return temp;
+//}
+//int max(int a[], int n)
+//{
+//    int max = a[0];
+//    for (int i = 1; i < n; i++)
+//        if (max < a[i])
+//            max = a[i];
+//    return max;
+//}
+//int main() {
+//    return 0;
+//}
+#include<bits/stdc++.h>
+using namespace std;
+bool ss(string a,string b){
+    string ab=a+b;
+    string ba=b+a;
+    if(ab.compare(ba)>0)
+        return true ;
+    return false;
+}
+int main(){
+    int test;
+    cin>>test;
+    while(test--){
+        int n;
+        cin>>n;
+        vector<string> luu;
+        cin.ignore();
+        while(n--){
+            string s;
+            cin>>s;
+            luu.push_back(s);
+        }
+        sort(luu.begin(),luu.end(),ss);
+        for(int i=0;i<luu.size();i++)
+            cout<<luu[i];
+        cout<<endl;
+    }
+    return 0;
+}

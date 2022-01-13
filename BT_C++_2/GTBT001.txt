@@ -1,0 +1,23 @@
+#include<iostream>
+#include<math.h>
+#include<iomanip>
+using namespace std;
+
+int main(){
+	int t, i, j, k;
+	float x, n;
+	cin >> t;
+	for(i = 1 ; i <= t ; i++){
+		cin >> n >> x;
+		float sum1 = 0;
+		for(k = 1 ; k <= n ; k++){
+			float sum2 = 0;
+			for(j = 1 ; j <= k ; j++){
+				sum2 += j;
+			}
+			sum1 += 1.0f*(pow(x, k)/sum2);
+		}
+		std::cout << setprecision(3) << fixed << sum1 << endl;
+	}
+	return 0;
+}

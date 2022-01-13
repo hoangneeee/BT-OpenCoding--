@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+long long doi_keo(long long x, long long y, long long m){
+	long long soVo = m/x; // soVo bang so keo mua duoc ban dau
+	long long soKeo = soVo;
+	while ((soVo/y) > 0){
+		long long soVoThua = soVo % y;
+		soKeo += soVo / y;
+		soVo = soVo/y + soVoThua;
+	}
+	return soKeo;
+}
+int main (){
+	int t;
+	cin >> t;
+	while (t--){
+		long long x,y,m;
+		cin >> x >> y >> m;
+		cout << doi_keo(x,y,m) << endl;
+	}
+	
+	return 0;
+}
